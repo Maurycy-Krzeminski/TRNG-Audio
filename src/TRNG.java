@@ -10,13 +10,13 @@ public class TRNG {
 
     void ReadFile(String input){
         StringBuilder sb = new StringBuilder();
-        BinaryForm = "";
         try (BufferedInputStream is = new BufferedInputStream(new FileInputStream(input))) {
             for (int b; (b = is.read()) != -1;) {
                 String s = "0000000" + Integer.toBinaryString(b);
                 s = s.substring(s.length() - 8);
-                BinaryForm.concat(s);
+                sb.append(s);
             }
+            BinaryForm = sb.toString();
         } catch (IOException e) {
             e.printStackTrace();
         }
