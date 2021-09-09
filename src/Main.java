@@ -6,8 +6,7 @@ public class Main {
         TRNG A = new TRNG();
         A.ReadFile("byme.wav");
         System.out.println(A.BinaryForm);
-
-
+        A.getL();
     }
 
 }
